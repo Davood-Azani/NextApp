@@ -30,4 +30,6 @@
 //? we add a client component called Counter, "use client"
 //? Hydration : is related to the client component and interactivity
 
-//----->
+//----->Displaying a Loading Indicator
+//? we use the loading.js in the route of app folder
+//# if js is disable in the browse this loading wont work!

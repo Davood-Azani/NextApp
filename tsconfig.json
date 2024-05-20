@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/cabins/page.js", "app/about/page.js"  ],
+, "app/cabins/page.js", "app/about/page.js", "app/loading.js"  ],
   "exclude": [
     "node_modules"
   ]

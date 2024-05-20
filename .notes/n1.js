@@ -33,3 +33,10 @@
 //----->Displaying a Loading Indicator
 //? we use the loading.js in the route of app folder
 //# if js is disable in the browse this loading wont work!
+//----->
+//# SSR : Server Side Rendering
+// ?  Both client and Server  components are initially rendered on the server when SSR is used
+//# because of this if we disable js in browser in the interactive section we can see the value we have passed from SC to the CC will be displayed but the interactivity is disabled!
+//?: To update your project to the latest Next.js version, just run this command in your project folder:
+//|: npm install next@latest react@latest react-dom@latest eslint-config-next@latest
+//----->

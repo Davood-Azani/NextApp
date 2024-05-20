@@ -42,3 +42,10 @@
 //----->HomePage
 //? we use pre-built home component : Image : fill quality placeholder
 //# className="object-cover object-top"
+//----->
+//? we make the about page and cabins and cabinCard
+//# in some scenario when we get a pic from database the Image cant handle the ability to responsive for pic (in many situations we can use Image(with imported pic) without W and H and it makes the pic responsive )
+//? to solve we use Image + fill + a container around our pic
+//# take a look for ex the second image in about page
+//? parent: aspect-square  + relative   | child :object-cover
+//| so it's a technique : we don use dimensions fro the image and pass to the parent | we use this way if we are not able to use the Image Way! (about pic 1)

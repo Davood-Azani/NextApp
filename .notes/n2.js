@@ -6,7 +6,7 @@
 //| we can add src folder and in that have app and components but this is ok
 //# public folder is for images to display directly in the site, logo(it's accessible from everywhere)
 //? so we have app folder in that we have _components , _lib,_styles and other path folder
-//# to activate @ alias be aware we are using js so delete ts.config then replace and chnage
+//# to activate @ alias be aware we are using js so delete ts.config then replace and change
 //? import Counter from './../_components/Counter' to  import Counter from '@/app/_components/Counter';
 // removed fetch code
 //  const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -22,4 +22,8 @@
 //? we add ourCustom colors to the tailwind config
 //# cssModule,StyledComponent can be used but we use tailwind
 //# install npm i @heroicons/react
+//----->MetaData and Fav icon
+//? activate the code on the global
+//? take a look at the rootLayout
+//# for fav icon , we use next convention name , icon , with any format we put it in the app then it will be appeared on the title as fav Icon
 //----->

@@ -38,3 +38,7 @@
 //? And finally, it also automatically lazy loads images only when they actually enter the viewport,
 //# if we pass teh address of image directly like src='./logo' , in this way we should pass the W and H but
 //| we can also pass the image as imported file and the use it in the src in this way Next first analyzes the image , and no need to pass the W and H, of course we need to add them , but the benefit is we can use some useful properties
+//# the Image , will calculate image Size on demand automatically
+//----->HomePage
+//? we use pre-built home component : Image : fill quality placeholder
+//# className="object-cover object-top"

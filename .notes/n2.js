@@ -28,3 +28,6 @@
 //# for fav icon , we use next convention name , icon , with any format we put it in the app then it will be appeared on the title as fav Icon
 //----->LOADING AND OPTIMIZING FONTS
 //# to use font , import , configure and pass the class name
+//----->MakeCenter Main and Navbar
+//? add some component instead of navBar and header,
+//? make as center the body with and the main with flex flex-col and flex-1 trick

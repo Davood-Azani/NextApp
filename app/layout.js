@@ -11,11 +11,11 @@ export default function RootLayout({ children }) {
       <body>
         <header>
           <Logo />
+          <Navigation />
         </header>
-        <Navigation />
+        <main>{children}</main>
+        <footer>I Am footer</footer>
       </body>
-      <main>{children}</main>
-      <footer>I Am footer</footer>
     </html>
   );
 }

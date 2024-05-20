@@ -19,4 +19,15 @@
 //| we can put some meta data in the layout, and as if it a server component we can see it in the source
 //| we make a conponent called logo to display logo
 //? we put the logo in the public folder and we have access with a slash
+//----->Fetch Data
+//# Each Pages in Next are RSC : React Server Component
+//? Fetch data in RSC ex :https://jsonplaceholder.typicode.com/users
+//? we use async /await for fetch
+//? log in RSC will be displayed in the terminal
+//? after first fetch the data wil be cached and if we mode to another pages and get back we can see the data immediately , but if we reload any page the data will be fetched again.
+//----->Add interactivity by client Component
+//| we can not use React Hooks in the RSC !!!
+//? we add a client component called Counter, "use client"
+//? Hydration : is related to the client component and interactivity
+
 //----->

@@ -31,3 +31,10 @@
 //----->MakeCenter Main and Navbar
 //? add some component instead of navBar and header,
 //? make as center the body with and the main with flex flex-col and flex-1 trick
+//----->optimizing images
+//# by using Image tag from next :
+//? it will automatically serve correctly sized images in modern formats.ex WebP
+//? Second, the Image component prevents layout shifts
+//? And finally, it also automatically lazy loads images only when they actually enter the viewport,
+//# if we pass teh address of image directly like src='./logo' , in this way we should pass the W and H but
+//| we can also pass the image as imported file and the use it in the src in this way Next first analyzes the image , and no need to pass the W and H, of course we need to add them , but the benefit is we can use some useful properties

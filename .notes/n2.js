@@ -13,4 +13,13 @@
 //  const data = await res.json();
 //  console.log(data);
 
+//----->STYLING WITH TAILWIND CSS
+//? import globals.css into the rootLayout
+//# by default in global we have these
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+//? we add ourCustom colors to the tailwind config
+//# cssModule,StyledComponent can be used but we use tailwind
+//# install npm i @heroicons/react
 //----->

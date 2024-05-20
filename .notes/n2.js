@@ -26,4 +26,5 @@
 //? activate the code on the global
 //? take a look at the rootLayout
 //# for fav icon , we use next convention name , icon , with any format we put it in the app then it will be appeared on the title as fav Icon
-//----->
+//----->LOADING AND OPTIMIZING FONTS
+//# to use font , import , configure and pass the class name

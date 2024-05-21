@@ -56,3 +56,6 @@
 //#  that this works for all errors and exceptions that happen anywhere in the app, but only in rendering.So any errors that will happen in callback functions will actually not be caught by a React error boundary.
 // | So only rendering errors will be caught right here.
 //|  this Error.js boundary does not catch errors that might happen in the root layout. to catch any errors,even if they are in the root layout,then we would need to create a file called global-error.js.
+//-----> ERROR HANDLING  NOT FOUND  ERRORS
+//# use this Convention : not-found.js
+// |  in Next.js,the not found page can actually be shown in two ways.First, an automatic way, simply if the URL doesn't exist,And second, we can also manually basically trigger this page by calling the notFound function. (ex we use it in the data-service)

@@ -41,3 +41,12 @@
 //# to get that we use {params} in the page :  in params : {id:1}
 //? note each loading will be used for that segment and it's children
 //# reminder : div parent relative , image fill + object-cover
+//-----> GENERATING DYNAMIC METADATA
+//# use this name to have dynamic metaData : generateMetadata
+//? it's convention name
+// ? ex : getCabin
+
+// export async function generateMetadata({ params }) {
+//   const { name } = await getCabin(params.cabinId);
+//   return { title: `Cabin ${name}` };
+// }

@@ -12,3 +12,11 @@
 //----->Fetch and  Display Data
 //? one of the great thing about RSC  pattern is that we are really close to the data source right here on the server,and many times don't even need the API layer.Now in this case, since we're using an external service,which relies on an API,we actually do still have an API layer here.It's just hidden from us because these supabase functions here,in data-service.js
 //? we did some configuration in next.Config.mjs
+//-----> Streaming Routes
+//? a trick to set center children in the div  <div className="grid items-center justify-center">
+//? to make loading for each segment just create a new loading in that segment folder
+//? we add some prebuilt spinner
+//# and we made custom class in the global.css file for that, take a look at that.
+//| if we disable js in the browser the data which coming from api wont be displayed
+//? we have noticed that in cabins page we have  a text with data, bud we can see the data wont be displayed until the data comes from api , whereas we know this text has nothing to do with the api! Ho to solve that ?
+

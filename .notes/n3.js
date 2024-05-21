@@ -50,3 +50,9 @@
 //   const { name } = await getCabin(params.cabinId);
 //   return { title: `Cabin ${name}` };
 // }
+//----->ERROR HANDLING SETTING UP ERROR BOUNDARIES
+//? Global error Boundary
+//? define a file with teh convention name error.js , and must have use client
+//#  that this works for all errors and exceptions that happen anywhere in the app, but only in rendering.So any errors that will happen in callback functions will actually not be caught by a React error boundary.
+// | So only rendering errors will be caught right here.
+//|  this Error.js boundary does not catch errors that might happen in the root layout. to catch any errors,even if they are in the root layout,then we would need to create a file called global-error.js.

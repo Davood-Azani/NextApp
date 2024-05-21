@@ -51,3 +51,5 @@
 //| so it's a technique : we don use dimensions fro the image and pass to the parent | we use this way if we are not able to use the Image Way! (about pic 1)
 //----->Add Nested Routes and Pages
 //? we make these paths (by adding folder in the account) : reservations and profile
+//----->Nested Layout
+//# just make layout in each section to have layout for each section

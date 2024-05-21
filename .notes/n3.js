@@ -36,3 +36,8 @@
 
 //! always pay attention how import the component in other pages
 //? dont import default export  by name import!!!!
+//----->DYNAMIC ROUTE SEGMENT
+//? to have dynamic route  we make a folder in wanted path , the name of that folder is  [whatever like id or segment or..] and in that folder we make a page.js
+//# to get that we use {params} in the page :  in params : {id:1}
+//? note each loading will be used for that segment and it's children
+//# reminder : div parent relative , image fill + object-cover

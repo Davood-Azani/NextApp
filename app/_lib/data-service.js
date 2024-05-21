@@ -1,6 +1,6 @@
 import { eachDayOfInterval } from 'date-fns';
 import { supabase } from './supabase';
-
+//----->Cabins
 /////////////
 // GET
 
@@ -48,7 +48,7 @@ export const getCabins = async function () {
 
   return data;
 };
-
+//----->
 // Guests are uniquely identified by their email address
 export async function getGuest(email) {
   const { data, error } = await supabase

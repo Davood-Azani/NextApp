@@ -37,3 +37,6 @@
 //| summary : we need to simulate the changing url, and get and pass the search params,
 //? we ned to pass the key to the suspense.
 //* suspense will not re-render the fallback.And the way we fix that is to pass in a unique key.And so then whenever the key is different and the child component here suspense,then the fallback will be shown again,
+//----->Server Component in Client Component
+//! as we sail earlier: just with props or children we can pass server Component into the client component
+//?ex: here we pass the select country which is a server component into the client component which is form(assume , we need state in the form so we make a client component into the profile paste and ...)

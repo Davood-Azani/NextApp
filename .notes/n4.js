@@ -22,3 +22,18 @@
 //? using react hook called : usePathname();
 //? we can get the path name and compare to the href and based on that add class
 //# and we know all react hooks are client side
+//----->SHARING STATE BETWEEN CLIENT AND SERVER  THE URL
+//# to get the params on the url we use another convention called : searchParams | and also we have useSearchParams hook
+//# on logging :http://localhost:3000/cabins?cap=small&max=5 ==>  { cap: 'small', max: '5' }
+//! And again, this searchParams is only available on the page.So really only in page.js, not in server components.
+//# see the cabins
+//# we get the filter from url, check nullability and pass all if it's null,then we do and use filter based on this params on client
+//# this is not a best way but it's ok
+//? reminder this page is not static anymore as we use a searchParam and as result if we have revalidate , it's not working
+
+//# whenever this searchParams here changes,which is a result of the URL changing,this server component here will re-render.
+//* that a server component re-renders whenever there is a navigation.And so that's exactly the situation that we have right here.
+
+//| summary : we need to simulate the changing url, and get and pass the search params,
+//? we ned to pass the key to the suspense.
+//* suspense will not re-render the fallback.And the way we fix that is to pass in a unique key.And so then whenever the key is different and the child component here suspense,then the fallback will be shown again,

@@ -1,6 +1,12 @@
 import { Suspense } from 'react';
 import Spinner from '@/app/_components/Spinner';
 import CabinList from '@/app/_components/CabinList';
+
+//# make using all time fresh Data
+// export const revalidate = 0;
+//# each 15 Seconds
+// export const revalidate = 15; // 15 seconds for test
+
 export const metadata = {
   title: 'Cabins',
 };

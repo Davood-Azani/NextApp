@@ -59,3 +59,80 @@
 //-----> ERROR HANDLING  NOT FOUND  ERRORS
 //# use this Convention : not-found.js
 // |  in Next.js,the not found page can actually be shown in two ways.First, an automatic way, simply if the URL doesn't exist,And second, we can also manually basically trigger this page by calling the notFound function. (ex we use it in the data-service)
+//-----> DIFFERENT TYPES OF SSR  STATIC VS  DYNAMIC RENDERING
+//----->Analyze the routes
+//# to see which routes are Static or Dynamic we need to build it
+//? npm run build
+//----->MAKING DYNAMIC PAGES STATIC WITH GENERATESTATICPARAMS
+//? in some scenario we can make Dynamic pages into static
+//? if we have limited dynamic var we can use this for having better performances
+// export async function generateStaticParams() {
+//   const cabins = await getCabins();
+//   const ids = cabins.map((cabin) => ({
+//// cabinId base on the param namw
+//     cabinId: String(cabin.id),
+//   }));
+
+//   return ids;
+// }
+//------>STATIC SITE GENERATION  SSC
+//# now our we is static we want to export it as static through a process called static site generation,so that we could then very, very easily deploy it so that we could then very, very easily deploy it to any hosting provider that supports static sites,which is basically every hosting provider out there,
+//? add this to the next config   output: 'export',
+//? npm run build
+//# to test open the output folder by vsCode  and use go live in the vscode
+//# in this way we have problem with images as Image is an optimized tag by next and in this situation does not work as needs vercel and vercel server, to solve we have 2 way : using old img tag , or using cloudinary
+//----->PARTIAL PRE RENDERING PPR
+//# Not yet Available
+//----->Cache Data in Next
+//? Caching always ON by default
+//# we have 4 kind of caching in Next
+//| REQUEST MEMOIZATION(Server) | DATA CACHE(Server) | FULL ROUTE CACHE(Server) | ROUTER CACHE(Client)
+
+//| REQUEST MEMOIZATION(Server)
+//# What Data    ? Data fetched with similar GET requests (same url and options in fetch function)
+//?How long      ? One page request (one render, one user)
+//?How To Enable ? No need to fetch at the top of tree: the same fetch in multiple components only makes one request
+//!  Only in components (not route handlers or server actions)
+
+//| DATA CACHE(Server)
+//# What Data    ? Data fetched in a route or a single fetch request
+//?How long      ? Indefinitely, even across de-deploys (can revalidate or opt out)
+//?How To Enable ? Data for static pages + ISR when revalidated
+
+//| FULL ROUTE CACHE(Server)
+//# What Data    ? Entire static pages (HTML and RSC payload)
+//?How long      ? Until the "Data cache" is invalidated (or app is re-deployed)
+//?How To Enable ? Static Pages
+
+//| ROUTER CACHE(Client)
+//# What Data    ? Pre-fetched and visited pages: static and dynamic
+//?How long      ? 30 sec dynamic / 5 min static (throughout one user session)
+//?How To Enable ? SPA-like navigation (instant navigation and no full reloads)
+
+//* Caching doesn't work in development  just in Production Mode.
+
+//? to see the caching do this
+//# npm run build && npm run start or we can add the command into the package.json and run this npm run prod
+
+//? if we change the price of ex cabin one we can see with refreshing the new price wont be updated on the Next.
+//# It is actually because of the data cache and therefore, of the full route cache.So again, this page has been statically generated.And so this means that this route here has now been cached with this data.So with the data that was in place when the page was statically generated.So basically at that point in time,all the data from our website was set in stone and will now be used for all the users who will visit our page until we revalidate that data.
+// ? export const revalidate = 0;
+//? now we can see the marker for static have changed to the dynamic
+
+//* Now this page is now regenerated for each request,and therefore, it's always getting the fresh data out of the database.
+
+//! as we know Static rendering is Active by default.so if we don need to get fresh data, dont do this
+
+//? we can define and set the time to get fresh data , in fact we are between static and dynamic
+// ? export const revalidate = 3600;  //> 1 hour
+//* we use this when data that changes from time to time but not constantly.
+
+//# another way to disable cache : we can disable cache for specific components like here , cabins we have static data no need to regenerate and awe have a component need to be refetch in suspense
+//? so we can use fetch no store as we using supabase we cant use it or use this
+//#  import { unstable_noStore } from 'next/cache';
+//# and :   unstable_noStore(); at first line of that component
+// or
+// import { unstable_noStore as noStore } from 'next/cache';
+// noStore();
+
+//# as a challenge , we changed the number of cabins in about page and activated the revalidate for a day

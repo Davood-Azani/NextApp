@@ -40,3 +40,21 @@
 //----->Server Component in Client Component
 //! as we sail earlier: just with props or children we can pass server Component into the client component
 //?ex: here we pass the select country which is a server component into the client component which is form(assume , we need state in the form so we make a client component into the profile paste and ...)
+//-----> DATA FETCHING STRATEGIES FOR THE RESERVATION SECTION
+//# we use DateSelector , pre built component , and
+//? install  : npm i react-day-picker
+//? and add pre-built reservation form
+//? we need some data and get some data from cabins setting and get bookedDateByCabinID by id and pass to the clients components  as prop
+
+//# blocking waterfall. : So what this means is that we're fetching multiple pieces of data that don't really depend on each other,but that are still blocking one another.
+//? ex : we have some async request for different components in a page
+//*1: a solution : promise all (we call all of them at the same time (parallel))
+//*2: another solution is : So instead of fetching all the data here on the parent page(Parallel),we can just create a bunch of different components and then have each component fetch all the data that it needs, and then those components can be streamed in as they become ready.So I believe that that is a much better strategy than just doing this(fetch all data in the parent).
+
+//! shift + alt + o : remove unnecessary imports
+
+//? we make a component that contains 2 components , and inside it we use parallel , and then we use streaming and  by suspense!
+
+//! we couldn't move fetching  into these two components because these are client components,and so we cannot fetch there.
+
+//!  ideally, client components should actually only be passed the minimal amount of data.(as less as possible : means better to pass less props as less as possible to the client components)

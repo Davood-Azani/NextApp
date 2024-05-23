@@ -43,3 +43,6 @@
 //# we need server Action | allow us to interactivity with server components and usually forms
 //? as we can not call the singIn directly which we export from auth , and we need to pass it to form as serverAction we create a file called actions, in the lib and follow them
 //# to see the settings and providers :http://localhost:3000/api/auth/providers
+//----->BUILDING A CUSTOM SIGN OUT BUTTON
+//? the same process : make server action,
+//* note : sign out Button is client component but we passed a server action to it and it works.means we can pass server actions to the client component and it works: more info in next lecture

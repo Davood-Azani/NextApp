@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
 import Spinner from '@/app/_components/Spinner';
 import CabinList from '@/app/_components/CabinList';
-import Filter from '../_components/Filter';
+import Filter from '@/app/_components/Filter';
+import ReservationReminder from '@/app/_components/ReservationReminder';
 
 //# make using all time fresh Data
 // export const revalidate = 0;
@@ -36,6 +37,7 @@ export default function Page({ searchParams }) {
       {/* suspense will not re-render the fallback.And the way we fix that is to pass in a unique key.And so then whenever the key is different and the child component here suspense,then the fallback will be shown again,*/}
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );

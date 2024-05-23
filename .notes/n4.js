@@ -58,3 +58,33 @@
 //! we couldn't move fetching  into these two components because these are client components,and so we cannot fetch there.
 
 //!  ideally, client components should actually only be passed the minimal amount of data.(as less as possible : means better to pass less props as less as possible to the client components)
+//----->Using ReactContextApi for State Management
+//? config datePicker by adding State and setting selected and onSelected
+//# now we need the data into the reservationForm Component .how share it?we want to share a state between 2 client component :
+//? possible solutions :
+//* : using url
+//#:  Not good
+//* : The second option is to create another component.in fact a parent component for them and then left state up
+//# not interesting ! and we did it earlier
+//* : using React Context Api : we know it works only in client component
+//?So, if we wanted to share a state between client and server,then we would have to use the URL as we did in the filter.
+//# no need to create folder for one context
+//? we make reservation context
+//# we make a ReservationContext in 5 Steps
+//* where should we put the context Api :
+//? it should always be placed as deep down as possible in the component tree in order to not cause unnecessary re-renders.
+//!  to not cause unnecessary re-renders
+//# ==> And so that would be basically right here in the parent component of DateSelector and ReservationForm. : Reservation.js
+//? but pretend we need it in to the entire app
+//# we put it in root layout and pass children into it  : in fact we pass a server component children(contains all page.js) into the client component called Reservation Provider. and that's Ok
+//! >>>> this is teh only way to use context Api in the NEXT js : create context component and use it into the main layout
+//* Alright now  all the client components and only the client components, not server components.So, all the client components will now be able to use our custom hook that we also exported from here.
+
+//? now we use it in the dateSelector
+//# to test we can use react Developer tools (Components Tree)
+
+//! reminder : whenever we have some change in the conTextApi the component which using it, will be re rendered
+
+//! to use contextApi , in components  , we need to add 'use client' ex: ReservationReminder
+
+//! reminder : If you want to share state between client and server,then you have to use the URL

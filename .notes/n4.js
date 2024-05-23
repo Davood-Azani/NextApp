@@ -88,3 +88,12 @@
 //! to use contextApi , in components  , we need to add 'use client' ex: ReservationReminder
 
 //! reminder : If you want to share state between client and server,then you have to use the URL
+
+//-----> CREATING AN API ENDPOINT WITH ROUTE HANDLERS
+//? we could not use route.js and page.js at the same time
+
+//? route.js return json!
+//? we make folder called api and make a file called route.js
+//#  from this route.js, we can export one or more functions where each of them can correspond to one of the HTTP verbs.
+//# Sample in the Api Folder
+//? This is how we create our own custom endpoints,right in Next.js, which again, is not that common and not that useful anymore,because now we have server actions.just don't give this our own custom names,so these functions really need to be called the name of the HTTP verb that we are making the request with.So that's GET or POST, PUT, PATCH, DELETE, and so on.

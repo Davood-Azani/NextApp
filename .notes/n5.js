@@ -36,3 +36,10 @@
 //# convention name for middleware ins middleware.js and we make it in the root folder and not in the app folder
 //? check middleware to read tips and notes
 //? to active authorization and use middleware we did some configuration in auth.js
+//----->BUILDING A CUSTOM SIGN IN PAGE
+//? if we want to change the default page of authentication by google with our custom page we need after making the specific route and page, do some change in the auth.js
+//? after that we need to connect our button to the login url of google | just need to use signIn and signOut from auth,
+//? be aware as this entire flow is gonna stay on the server, so the button can not be a client component means we can not use onClick={}, this is for interactivity in client component
+//# we need server Action | allow us to interactivity with server components and usually forms
+//? as we can not call the singIn directly which we export from auth , and we need to pass it to form as serverAction we create a file called actions, in the lib and follow them
+//# to see the settings and providers :http://localhost:3000/api/auth/providers

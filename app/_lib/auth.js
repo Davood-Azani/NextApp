@@ -15,9 +15,15 @@ const authConfig = {
       return !!auth?.user;
     },
   },
+  //# change default pages of authentication
+  pages: {
+    signIn: '/login',
+  },
 };
 
 export const {
   auth,
+  signIn,
+  signOut,
   handlers: { GET, POST },
 } = NextAuth(authConfig);

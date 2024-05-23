@@ -30,3 +30,9 @@
 //# only logged user can reservation form
 
 //* use authentication on server component to achieve the second purpose we use auth in the Reservation.js
+
+//----->WHAT IS MIDDLEWARE IN Next
+//----->PROTECTING ROUTES WITH NEXTAUTH MIDDLEWARE
+//# convention name for middleware ins middleware.js and we make it in the root folder and not in the app folder
+//? check middleware to read tips and notes
+//? to active authorization and use middleware we did some configuration in auth.js

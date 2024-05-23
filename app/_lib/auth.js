@@ -8,6 +8,13 @@ const authConfig = {
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
+  //# when we set matcher, if fact we say if url is that this fn will be called and if this returns true user can go forward.
+  //? !! the modern way of converting to bool
+  callbacks: {
+    authorized({ auth, request }) {
+      return !!auth?.user;
+    },
+  },
 };
 
 export const {

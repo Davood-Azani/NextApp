@@ -20,3 +20,8 @@
 
 //! we need to assume inputs are unsafe as we are working on the backend
 //----->UPDATING THE PROFILE USING A SERVER ACTION
+//? to fetch dat awe need to be in a server component
+//? server actions can be in a server component directly or the cleaner way is to be in a separated file
+//? to get data from a form we get data fro formData, and we have to set the name for inputs
+//? we dont use try catch in server actions , instead we use throw
+//? after updating we need to revalidate the result to be applied in the ui otherwise because of the browser cache or also called the Router cache about 30 sec we have the previous data

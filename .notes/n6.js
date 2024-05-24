@@ -25,3 +25,9 @@
 //? to get data from a form we get data fro formData, and we have to set the name for inputs
 //? we dont use try catch in server actions , instead we use throw
 //? after updating we need to revalidate the result to be applied in the ui otherwise because of the browser cache or also called the Router cache about 30 sec we have the previous data
+//----->MANUAL CACHE REVALIDATION
+//# revalidatePath('/account/profile');
+//----->DISPLAYING A LOADING INDICATOR  THE USEFORMSTATUS HOOK
+//#  useFormStatus :  it must be used in a component that's rendered inside a form.So not inside a component that simply contains a form.
+//? because of this we make a component for button
+//? sample in UpdateButton in UpdateProfileForm

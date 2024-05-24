@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { auth, signIn, signOut } from './auth';
 import { supabase } from './supabase';
 
@@ -40,6 +41,6 @@ export async function updateGuest(formData) {
   if (error) {
     throw new Error('Guest could not be updated');
   }
-}
 
-//? about a few times before, the browser cache or also called the Router cache.()30 sec
+  revalidatePath('/account/profile');
+}

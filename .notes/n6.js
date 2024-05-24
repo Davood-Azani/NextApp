@@ -40,3 +40,9 @@
 //# useTransition() |
 //? So at the core, useTransition allows us to mark a state update as a so-called transition. And when a state update is marked as a transition by using the useTransition hook,that state update will happen without blocking the UI.So, which means that the UI will stay responsive during a re-render, and we also get an indication that a state transition is happening.
 //! always check user is allowed to delete the specific id
+//----->Edit Booking
+//? we dont have something new to tell
+//?add hidden field(input )in to form
+//? using useStatusForm to loading
+//? revalidate 2 path in the server action
+//? Shift + alt +o

@@ -1,10 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { updateGuest } from '../_lib/actions';
-import { useFormStatus } from 'react-dom';
-import SpinnerMini from './SpinnerMini';
+import { SubmitButton } from './SubmitButton';
 function UpdateProfileForm({ children, guest }) {
-  const [count, setCount] = useState();
+  const [count, setCount] = useState(); //# for educational purposes: use server Component as children in client
   const { fullName, email, nationality, nationalID, countryFlag } = guest;
 
   return (
@@ -55,7 +54,7 @@ function UpdateProfileForm({ children, guest }) {
       </div>
 
       <div className="flex justify-end items-center gap-6">
-        <UpdateButton />
+        <SubmitButton>Update Profile</SubmitButton>
       </div>
     </form>
   );
@@ -64,16 +63,3 @@ function UpdateProfileForm({ children, guest }) {
 export default UpdateProfileForm;
 
 //! we can write serverActions in serverComponent but here is a client component, so teh best way is to write it in the separated file, called serverActions
-
-function UpdateButton() {
-  //? this is a client component  but as we are in  same file with the directive no need to write here use client
-  const { pending } = useFormStatus();
-  return (
-    <button
-      disabled={pending}
-      className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300"
-    >
-      {!pending ? 'Update profile' : 'Updating ...'}
-    </button>
-  );
-}

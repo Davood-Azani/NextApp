@@ -6,6 +6,7 @@ export const metadata = {
 async function page() {
   //? as user cant see this page without authentication, so no need to use optional chaining ?
   const session = await auth();
+  console.log(session);
   const firstName = session.user.name.split(' ').at(0);
 
   return (

@@ -46,3 +46,15 @@
 //----->BUILDING A CUSTOM SIGN OUT BUTTON
 //? the same process : make server action,
 //* note : sign out Button is client component but we passed a server action to it and it works.means we can pass server actions to the client component and it works: more info in next lecture
+//----->CREATING A NEW GUEST ON FIRST SIGN IN
+//? whenever a user signs in,we need to check if there is already a guest here with that ID in the table.And if so, we just store the information,like, for example, the guest ID on the session,and then our application knows the guest that has been logged in.
+//#  if there isn't any guest in the table yet,well, then we just create a new one.
+//? to do that we need to add another callback , signIn, this will be executed after inserting user info and approved by google(means the data is correct) and  before logging in user.
+
+//? the singIn callback must return true or false, like authorize
+//# take a look at the code of auth , if use is new , it will be registered in db.
+//# aif user is existed nothing will be added to db, just need the user id in both scenario
+//? we can get id everywhere, but we need to set in a central place.
+//| session callback : So, that callback is gonna be called the session callback,and it runs after the sign in callback,and also each time that the session is checked out.So, for example, when we call that off function.this is a perfect place to add the guest ID to that session.
+
+//? take a look at the auth.

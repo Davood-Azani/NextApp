@@ -1,11 +1,11 @@
 'use client';
 import { TrashIcon } from '@heroicons/react/24/solid';
-import { deleteReservation } from '../_lib/actions';
+// import { deleteReservation } from '../_lib/actions';
 
 import { useTransition } from 'react';
 import SpinnerMini from './SpinnerMini';
 
-function DeleteReservation({ bookingId }) {
+function DeleteReservation({ bookingId, onDelete }) {
   //? it's possible to write here but we write in the serverActions
   // async function deleteReservation() {
   //   'use server'
@@ -13,10 +13,14 @@ function DeleteReservation({ bookingId }) {
 
   // }
   const [isPending, startTransition] = useTransition();
-
+  //# before optimistic
+  // function handleDelete() {
+  //   if (confirm('⛔Are you Sure to DELETE this Reservation?'))
+  //     startTransition(() => deleteReservation(bookingId));
+  // }
   function handleDelete() {
     if (confirm('⛔Are you Sure to DELETE this Reservation?'))
-      startTransition(() => deleteReservation(bookingId));
+      startTransition(() => onDelete(bookingId));
   }
 
   return (

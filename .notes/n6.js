@@ -46,3 +46,15 @@
 //? using useStatusForm to loading
 //? revalidate 2 path in the server action
 //? Shift + alt +o
+//----->THE USE OPTIMISTIC HOOK
+//# So essentially, optimistic UI is a trick and a technique that we can use in order to improve the perceived performance of a user interface.
+//? And it's called optimistic because we assume that a certain asynchronous operation will be successful before it has even finished,so while it's still working in the background.
+//?So the goal of this technique is to improve the user experience by a lot,because it makes the app feel so much faster and more responsive,without having all these loading spinners Now in this application,
+//? as this is a hook we need a client component
+//? so as previous tip , we separated the reservation list into a component to use the new hoo in there
+
+//*  So the useOptimistic hook takes two arguments.It takes first the current state, which will be the one that is usually rendered here,unless there is currently an async operation happening.
+//# take a look at the reservation List
+//| for adding : [...curBookings,newBooking]
+
+//# the great thing about optimistic is , if we get error the data ex here will be backed!

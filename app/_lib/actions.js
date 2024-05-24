@@ -47,8 +47,12 @@ export async function updateGuest(formData) {
   //----->
   revalidatePath('/account/profile');
 }
-//# here we passed a single param simply!
+
 export async function deleteReservation(bookingId) {
+  //# test for optimistic
+  //   await new Promise((res) => setTimeout(res, 5000));
+  //   throw new Error('Fake Error');
+  //# here we passed a single param simply!
   const session = await auth();
   //# check user is login ?
   if (!session) throw new Error('You Must be logged in!');

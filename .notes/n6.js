@@ -60,3 +60,22 @@
 //# the great thing about optimistic is , if we get error the data ex here will be backed!
 //----->FINISHING THE DATE SELECTOR
 //? add some logic to Date Selector
+//----->CREATING A NEW RESERVATION
+//?#Create
+//? in create  mode if we have more data to send to server , better to use bind
+//# bind add extra data to teh server action
+// | and then we pass the binded action to the a form,
+//# in using bind the order matters most
+//  const bookingData = {
+//     startDate,
+//     endDate,
+//     numNights,
+//     cabinPrice,
+//     cabinId: id,
+//   };
+
+// const createBookingWithData = createBooking.bind(null, bookingData);
+//? we can pass more data to bind serverActionFn.bind(null, data,data,data,...);
+//# to use data in serverActions we pass the bind first (bookingData, formData)
+//# we use the bind name.
+//# in server Action we can use this   //Object.entries(formData.entries())  if we have a lot to get from formData

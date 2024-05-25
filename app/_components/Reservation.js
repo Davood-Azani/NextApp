@@ -6,7 +6,7 @@ import ReservationForm from './ReservationForm';
 
 async function Reservation({ cabin }) {
   //# we fetch data in here as it's server components and they are client component
-  const [settings, bookDates] = await Promise.all([
+  const [settings, bookedDates] = await Promise.all([
     getSettings(),
     getBookedDatesByCabinId(cabin.id),
   ]);
@@ -14,7 +14,11 @@ async function Reservation({ cabin }) {
 
   return (
     <div className=" grid grid-cols-2 border border-primary-800 min-h-[400px]">
-      <DateSelector settings={settings} bookDates={bookDates} cabin={cabin} />
+      <DateSelector
+        settings={settings}
+        bookedDates={bookedDates}
+        cabin={cabin}
+      />
       {session?.user ? (
         <ReservationForm cabin={cabin} user={session.user} />
       ) : (
